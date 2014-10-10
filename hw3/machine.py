@@ -57,4 +57,35 @@ def copy(frm, to):
       'copy'\
    ]
 
+def increment(addr):
+    return[\
+        'set 1 1',\
+        'set 3 ' + str(addr),\
+        'set 4 2',\
+        'copy',\
+        'add',\
+        'set 3 0',\
+        'set 4 ' + str(addr),\
+        'copy',\
+        'set 0 0',\
+        'set 1 0',\
+        'set 2 0',\
+        'set 4 0'\
+    ]
+
+def decrement(addr):
+    return[\
+        'set 1 -1',\
+        'set 3 ' + str(addr),\
+        'set 4 2',\
+        'copy',\
+        'add',\
+        'set 3 0',\
+        'set 4 ' + str(addr),\
+        'copy',\
+        'set 0 0',\
+        'set 1 0',\
+        'set 2 0',\
+        'set 4 0'\
+    ]
 # eof
