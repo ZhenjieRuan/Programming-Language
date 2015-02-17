@@ -93,9 +93,15 @@ def evalTerm(env, e):
             elif label == 'Variable':
                 x = children[0]
                 if x in env:
+<<<<<<< HEAD
                     return evalTerm(env, env[x])
                 else:
                     print(x + 'is  unbound.')
+=======
+                    return
+                else:
+                    print(x + 'is unbound')
+>>>>>>> a2e13d13cc1bd31a53e1a2d2d2dea428894ee85b
                     exit()
             elif label == 'Plus':
                 f1 = children[0]
@@ -117,7 +123,11 @@ def evalFormula(env, e):
             elif label == 'Variable':
                 x = children[0]
                 if x in env:
+<<<<<<< HEAD
                     return evalFormula(env, env[x])
+=======
+                    return
+>>>>>>> a2e13d13cc1bd31a53e1a2d2d2dea428894ee85b
                 else:
                     print(x + 'is  unbound.')
                     exit()
@@ -175,16 +185,29 @@ def execProgram(env, s):
                 return (env, o)
             elif label == 'Procedure':
                 children = s[label]
+<<<<<<< HEAD
                 x = children[0]['Variable'][0]
                 p1 = children[1]
                 p2 = children[2]
                 env[x] = p1
                 (env2, o) = execProgram(env, p2)
+=======
+                env1 = env
+                x = children[0]
+                p1 = children[1]
+                p2 = children[2]
+                env1[x] = p1
+                (env2, o) = execProgram(env1, p2)
+>>>>>>> a2e13d13cc1bd31a53e1a2d2d2dea428894ee85b
                 return (env2, o)
             elif label == 'Call':
                 children = s[label]
                 env1 = env
+<<<<<<< HEAD
                 x = children[0]['Variable'][0]
+=======
+                x = children[0]
+>>>>>>> a2e13d13cc1bd31a53e1a2d2d2dea428894ee85b
                 p1 = env1[x]
                 p2 = children[1]
                 (env2, o1) = execProgram(env1, p1)

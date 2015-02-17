@@ -15,10 +15,17 @@ def simulate(s):
     while control < len(instructions):
         # Update the memory address for control.
         mem[6] = control
+<<<<<<< HEAD
         print(mem)
         # Retrieve the current instruction.
         inst = instructions[control]
         print(inst)
+=======
+
+        # Retrieve the current instruction.
+        inst = instructions[control]
+
+>>>>>>> a2e13d13cc1bd31a53e1a2d2d2dea428894ee85b
         # Handle the instruction.
         if inst[0] == 'label':
             pass
@@ -88,6 +95,7 @@ def decrement(addr):
         'set 2 0',\
         'set 4 0'\
     ]
+<<<<<<< HEAD
 
 def call(name):
     return decrement(7)\
@@ -124,4 +132,6 @@ def procedure(name, body):
         'jump 0',\
         'label ' + name + "_end"\
     ]
+=======
+>>>>>>> a2e13d13cc1bd31a53e1a2d2d2dea428894ee85b
 # eof
